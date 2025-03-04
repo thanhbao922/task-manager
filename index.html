@@ -10,6 +10,12 @@
     <div class="container">
         <h1>Task Manager</h1>
         <input type="text" id="projectName" placeholder="Project Name">
+        <input type="date" class="taskDueDate">
+        <select class="taskPriority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
         <button onclick="addProject()">Add Project</button>
         <div id="projectList">
             <!-- Các project sẽ được hiển thị ở đây -->
