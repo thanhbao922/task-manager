@@ -54,6 +54,22 @@ button:hover {
     background: #0056b3;
 }
 
+/* Cải thiện tiêu đề dự án */
+.project h3 {
+    cursor: pointer;
+    background: #4A90E2;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.project h3:hover {
+    background: #357ABD;
+}
+
 /* Dự án */
 .project {
     background: #f9f9f9;
@@ -63,57 +79,39 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Task */
+/* Giao diện Task */
 .task {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
-    padding: 8px;
-    margin-top: 5px;
+    background: #fff;
+    padding: 10px;
+    margin: 5px 0;
     border-radius: 8px;
     border: 1px solid #ddd;
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
 }
 
-/* Task hoàn thành */
-.completed {
-    text-decoration: line-through;
-    color: gray;
+.task:hover {
+    background: #f8f8f8;
 }
 
-/* Nút Xóa */
+/* Căn chỉnh lại checkbox */
+.task input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 10px;
+}
+
+/* Nút Xóa (Delete) */
 button.delete {
-    background: #FF4D4D;
-    padding: 5px 10px;
-}
-
-button.delete:hover {
-    background: #cc0000;
-}
-
-/* Cải thiện tiêu đề dự án */
-.project h3 {
-    cursor: pointer;
-    background: #007BFF;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    margin: 0;
-    transition: all 0.3s ease;
-}
-
-.project h3:hover {
-    background: #0056b3;
-}
-
-/* Nút xóa đẹp hơn */
-button.delete {
-    background: #FF4D4D;
-    padding: 5px 10px;
+    background: #FF6B6B;
+    padding: 6px 10px;
     border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
 button.delete:hover {
-    background: #cc0000;
+    background: #E63946;
 }
