@@ -91,3 +91,29 @@ button.delete {
 button.delete:hover {
     background: #cc0000;
 }
+
+/* Cải thiện tiêu đề dự án */
+.project h3 {
+    cursor: pointer;
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.project h3:hover {
+    background: #0056b3;
+}
+
+/* Nút xóa đẹp hơn */
+button.delete {
+    background: #FF4D4D;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+button.delete:hover {
+    background: #cc0000;
+}
