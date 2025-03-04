@@ -63,14 +63,17 @@ input:focus, select:focus {
 
 .taskInput {
     flex: 3;
+    width: 100%;
 }
 
 .taskDueDate, .taskPriority {
     flex: 1;
+    width: 100%;
 }
 
 .taskContainer button {
     flex: 1;
+    min-width: 100px;
 }
 
 /* Nút bấm */
@@ -213,7 +216,13 @@ button.delete:hover {
 }
 
 .subtask input[type="checkbox"] {
-    margin-right: 8px;
+    margin-left: 10px;
+    transform: scale(1.2);
+}
+
+.subtask span {
+    flex: 1;
+    text-align: left;
 }
 
 .subtask button {
