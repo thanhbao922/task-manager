@@ -115,3 +115,35 @@ button.delete {
 button.delete:hover {
     background: #E63946;
 }
+
+/* Hiển thị Due Date */
+.due-date {
+    font-size: 12px;
+    color: #777;
+    margin-left: 10px;
+}
+
+/* Hiển thị độ ưu tiên */
+.priority {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* Màu sắc cho độ ưu tiên */
+.priority.low {
+    background: #D4EDDA;
+    color: #155724;
+}
+
+.priority.medium {
+    background: #FFF3CD;
+    color: #856404;
+}
+
+.priority.high {
+    background: #F8D7DA;
+    color: #721C24;
+}
