@@ -9,23 +9,26 @@ function addProject() {
     let projectDiv = document.createElement("div");
     projectDiv.classList.add("project");
     projectDiv.innerHTML = `
-        <h3 onclick="toggleTasks(this)">${projectName} ⬇</h3>
-        <input type="text" placeholder="Task Name" class="taskInput">
-        <input type="date" class="taskDueDate">
-        <select class="taskPriority">
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-        </select>
-        <button onclick="addTask(this)">Add Task</button>
-        <div class="taskList" style="display: none;"></div>`;
+        <h3 onclick="toggleTasks(this)" class="project-title">${projectName} ⬇</h3>
+        <div class="taskContainer">
+            <input type="text" placeholder="Task Name" class="taskInput">
+            <input type="date" class="taskDueDate">
+            <select class="taskPriority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button onclick="addTask(this)">Add Task</button>
+            <div class="taskList"></div>
+        </div>
+    `;
 
     document.getElementById("projectList").appendChild(projectDiv);
     document.getElementById("projectName").value = "";
 }
 
 function addTask(button) {
-    let project = button.parentElement;
+    let project = button.parentElement.parentElement;
     let taskList = project.querySelector(".taskList");
     let taskInput = project.querySelector(".taskInput");
     let dueDateInput = project.querySelector(".taskDueDate");
@@ -86,11 +89,16 @@ function deleteTask(button) {
 }
 
 function toggleTasks(header) {
-    let taskList = header.nextElementSibling.nextElementSibling;
-    if (taskList.style.display === "none") {
+    let project = header.parentElement;
+    let taskContainer = project.querySelector(".taskContainer");
+    let taskList = project.querySelector(".taskList");
+
+    if (taskContainer.style.display === "none") {
+        taskContainer.style.display = "block";
         taskList.style.display = "block";
         header.innerHTML = header.innerHTML.replace("⬇", "⬆");
     } else {
+        taskContainer.style.display = "none";
         taskList.style.display = "none";
         header.innerHTML = header.innerHTML.replace("⬆", "⬇");
     }
