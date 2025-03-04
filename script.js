@@ -19,18 +19,30 @@ function addProject() {
 }
 
 function addTask(button) {
-    let project = button.parentElement;
-    let taskName = project.querySelector(".taskInput").value;
-    if (taskName.trim() === "") return;
+    let project = button.parentElement; // Lấy Project chứa Task
+    let taskList = project.querySelector(".taskList"); // Lấy danh sách Task của Project
+    let taskInput = project.querySelector(".taskInput"); // Ô nhập Task
+    let taskName = taskInput.value.trim(); // Lấy tên Task
 
+    if (taskName === "") return; // Nếu trống thì không làm gì
+
+    // Tạo phần tử Task
     let taskDiv = document.createElement("div");
     taskDiv.classList.add("task");
-    taskDiv.innerHTML = `<input type="checkbox" onclick="toggleTask(this)">
+    taskDiv.innerHTML = `
+        <input type="checkbox" onclick="toggleTask(this)">
         <span>${taskName}</span>
-        <button class="delete" onclick="deleteTask(this)">❌</button>`;
+        <button class="delete" onclick="deleteTask(this)">❌</button>
+    `;
 
-    project.querySelector(".taskList").appendChild(taskDiv);
-    project.querySelector(".taskInput").value = "";
+    // Hiển thị danh sách Task nếu đang bị ẩn
+    taskList.style.display = "block"; 
+
+    // Thêm Task vào danh sách
+    taskList.appendChild(taskDiv);
+
+    // Xóa nội dung ô nhập sau khi thêm
+    taskInput.value = "";
 }
 
 function toggleTask(checkbox) {
