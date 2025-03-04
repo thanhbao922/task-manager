@@ -11,6 +11,12 @@ function addProject() {
     projectDiv.innerHTML = `
         <h3 onclick="toggleTasks(this)">${projectName} ⬇</h3>
         <input type="text" placeholder="Task Name" class="taskInput">
+        <input type="date" class="taskDueDate">
+        <select class="taskPriority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
         <button onclick="addTask(this)">Add Task</button>
         <div class="taskList" style="display: none;"></div>`;
 
@@ -19,30 +25,33 @@ function addProject() {
 }
 
 function addTask(button) {
-    let project = button.parentElement; // Lấy Project chứa Task
-    let taskList = project.querySelector(".taskList"); // Lấy danh sách Task của Project
-    let taskInput = project.querySelector(".taskInput"); // Ô nhập Task
-    let taskName = taskInput.value.trim(); // Lấy tên Task
+    let project = button.parentElement;
+    let taskList = project.querySelector(".taskList");
+    let taskInput = project.querySelector(".taskInput");
+    let dueDateInput = project.querySelector(".taskDueDate");
+    let priorityInput = project.querySelector(".taskPriority");
+    let taskName = taskInput.value.trim();
+    let dueDate = dueDateInput.value;
+    let priority = priorityInput.value;
 
-    if (taskName === "") return; // Nếu trống thì không làm gì
+    if (taskName === "") return;
 
-    // Tạo phần tử Task
     let taskDiv = document.createElement("div");
     taskDiv.classList.add("task");
     taskDiv.innerHTML = `
         <input type="checkbox" onclick="toggleTask(this)">
         <span>${taskName}</span>
+        <span class="due-date">${dueDate ? "Due: " + dueDate : "No Due Date"}</span>
+        <span class="priority ${priority.toLowerCase()}">${priority}</span>
         <button class="delete" onclick="deleteTask(this)">❌</button>
     `;
 
-    // Hiển thị danh sách Task nếu đang bị ẩn
-    taskList.style.display = "block"; 
-
-    // Thêm Task vào danh sách
+    taskList.style.display = "block";
     taskList.appendChild(taskDiv);
 
-    // Xóa nội dung ô nhập sau khi thêm
     taskInput.value = "";
+    dueDateInput.value = "";
+    priorityInput.value = "Low";
 }
 
 function toggleTask(checkbox) {
