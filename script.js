@@ -44,6 +44,9 @@ function addTask(button) {
         <span class="due-date">${dueDate ? "Due: " + dueDate : "No Due Date"}</span>
         <span class="priority ${priority.toLowerCase()}">${priority}</span>
         <button class="delete" onclick="deleteTask(this)">❌</button>
+        <div class="subtaskList"></div>
+        <input type="text" class="subtaskInput" placeholder="Add subtask">
+        <button onclick="addSubtask(this)">+ Subtask</button>
     `;
 
     taskList.style.display = "block";
@@ -52,6 +55,26 @@ function addTask(button) {
     taskInput.value = "";
     dueDateInput.value = "";
     priorityInput.value = "Low";
+}
+
+function addSubtask(button) {
+    let task = button.parentElement;
+    let subtaskList = task.querySelector(".subtaskList");
+    let subtaskInput = task.querySelector(".subtaskInput");
+    let subtaskName = subtaskInput.value.trim();
+
+    if (subtaskName === "") return;
+
+    let subtaskDiv = document.createElement("div");
+    subtaskDiv.classList.add("subtask");
+    subtaskDiv.innerHTML = `
+        <input type="checkbox" onclick="toggleTask(this)">
+        <span>${subtaskName}</span>
+        <button class="delete" onclick="deleteTask(this)">❌</button>
+    `;
+
+    subtaskList.appendChild(subtaskDiv);
+    subtaskInput.value = "";
 }
 
 function toggleTask(checkbox) {
