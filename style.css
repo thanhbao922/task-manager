@@ -9,6 +9,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow-y: auto;
+    transition: background 0.3s ease-in-out;
 }
 
 /* Container chính */
@@ -21,6 +22,11 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-top: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Tiêu đề */
@@ -28,6 +34,7 @@ h1 {
     font-size: 24px;
     color: #333;
     margin-bottom: 15px;
+    transition: color 0.3s ease-in-out;
 }
 
 /* Ô nhập liệu */
@@ -38,6 +45,13 @@ input, select {
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
 }
 
 /* Nút bấm */
@@ -56,6 +70,7 @@ button {
 /* Hiệu ứng hover */
 button:hover {
     background: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Cải thiện tiêu đề dự án */
@@ -73,6 +88,7 @@ button:hover {
 
 .project-title:hover {
     background: #357ABD;
+    transform: scale(1.02);
 }
 
 /* Dự án */
@@ -82,6 +98,11 @@ button:hover {
     padding: 15px;
     margin-top: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.01);
 }
 
 /* Giao diện Task */
@@ -101,6 +122,7 @@ button:hover {
 
 .task:hover {
     background: #f8f8f8;
+    transform: scale(1.02);
 }
 
 /* Căn chỉnh lại checkbox */
@@ -120,6 +142,7 @@ button.delete {
 
 button.delete:hover {
     background: #E63946;
+    transform: scale(1.1);
 }
 
 /* Hiển thị Due Date */
@@ -136,6 +159,7 @@ button.delete:hover {
     padding: 4px 8px;
     border-radius: 5px;
     margin-top: 5px;
+    transition: all 0.3s ease;
 }
 
 /* Màu sắc cho độ ưu tiên */
@@ -172,4 +196,5 @@ button.delete:hover {
 
 .subtask:hover {
     background: #ececec;
+    transform: scale(1.02);
 }
