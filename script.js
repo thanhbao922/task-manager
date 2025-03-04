@@ -3,13 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function addProject() {
-    let projectName = document.getElementById("projectName").value;
-    if (projectName.trim() === "") return;
+    let projectName = document.querySelector(".projectInput").value.trim();
+    let dueDate = document.querySelector(".projectDueDate").value;
+    let priority = document.querySelector(".projectPriority").value;
+
+    if (projectName === "") return;
 
     let projectDiv = document.createElement("div");
     projectDiv.classList.add("project");
     projectDiv.innerHTML = `
         <h3 onclick="toggleTasks(this)" class="project-title">${projectName} ⬇</h3>
+        <p><strong>Due:</strong> ${dueDate ? dueDate : "No Due Date"} | <strong>Priority:</strong> ${priority}</p>
         <div class="taskContainer">
             <input type="text" placeholder="Task Name" class="taskInput">
             <input type="date" class="taskDueDate">
@@ -24,7 +28,11 @@ function addProject() {
     `;
 
     document.getElementById("projectList").appendChild(projectDiv);
-    document.getElementById("projectName").value = "";
+    
+    // Reset input fields
+    document.querySelector(".projectInput").value = "";
+    document.querySelector(".projectDueDate").value = "";
+    document.querySelector(".projectPriority").value = "Low";
 }
 
 function addTask(button) {
