@@ -39,9 +39,7 @@ h1 {
 
 /* Ô nhập liệu */
 input, select {
-    width: 95%;
     padding: 10px;
-    margin: 6px 0;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
@@ -52,6 +50,26 @@ input:focus, select:focus {
     border-color: #007BFF;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     outline: none;
+}
+
+/* Dàn hàng cho Project Input, Due Date & Priority */
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.projectInput {
+    flex: 2;
+}
+
+.projectDueDate {
+    flex: 1;
+}
+
+.projectPriority {
+    flex: 1;
 }
 
 /* Nút bấm */
