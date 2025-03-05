@@ -37,22 +37,7 @@ h1 {
     transition: color 0.3s ease-in-out;
 }
 
-/* Ô nhập liệu */
-input, select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-input:focus, select:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    outline: none;
-}
-
-/* Dàn hàng cho Project Input, Due Date & Priority */
+/* Dàn hàng cho Project Input */
 .projectContainer {
     display: flex;
     gap: 10px;
@@ -68,7 +53,7 @@ input:focus, select:focus {
     width: 100%;
 }
 
-/* Dàn hàng cho Task Input, Due Date & Priority */
+/* Dàn hàng cho Task Input */
 .taskRow {
     display: flex;
     align-items: center;
@@ -169,44 +154,14 @@ button.delete:hover {
     transform: scale(1.1);
 }
 
-/* Căn chỉnh Subtask */
-.subtaskContainer {
+/* Căn chỉnh khoảng cách giữa Task Name, Due Date, Priority */
+.taskDetails {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.subtask {
-    display: flex;
+    gap: 10px;
     align-items: center;
-    justify-content: space-between;
-    background: #f9f9f9;
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    transition: all 0.2s ease;
-    width: 100%;
 }
 
-.subtask input[type="checkbox"] {
-    margin-left: 10px;
-    transform: scale(1.2);
-}
-
-.subtask span {
-    flex: 1;
-    text-align: left;
-}
-
-.subtask button {
-    background: #FF6B6B;
-    border-radius: 6px;
-    padding: 5px 8px;
-    font-size: 12px;
-}
-
-.subtask button:hover {
-    background: #E63946;
+.taskDetails span {
+    font-weight: bold;
+    margin-right: 5px;
 }
