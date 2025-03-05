@@ -76,6 +76,14 @@ input:focus, select:focus {
     min-width: 100px;
 }
 
+/* Căn chỉnh Subtask để không bị lệch */
+.subtaskContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+}
+
 /* Nút bấm */
 button {
     background: #007BFF;
@@ -139,6 +147,7 @@ button:hover {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease-in-out;
     flex-direction: column;
+    width: 100%;
 }
 
 .task:hover {
@@ -164,43 +173,7 @@ button.delete:hover {
     transform: scale(1.1);
 }
 
-/* Hiển thị Due Date */
-.due-date {
-    font-size: 13px;
-    color: #555;
-    margin-top: 6px;
-}
-
-/* Hiển thị độ ưu tiên */
-.priority {
-    font-size: 13px;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-top: 6px;
-    transition: all 0.3s ease;
-}
-
-.priority.low {
-    background: #D4EDDA;
-    color: #155724;
-}
-
-.priority.medium {
-    background: #FFF3CD;
-    color: #856404;
-}
-
-.priority.high {
-    background: #F8D7DA;
-    color: #721C24;
-}
-
-/* Cải thiện bố cục Subtask */
-.subtaskList {
-    margin-top: 10px;
-}
-
+/* Căn chỉnh Subtask */
 .subtask {
     display: flex;
     align-items: center;
